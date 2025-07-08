@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: shopify-stripe-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        value: your_stripe_secret_key
+      - key: SHOPIFY_ADMIN_TOKEN
+        value: your_shopify_admin_token
+      - key: STRIPE_WEBHOOK_SECRET
+        value: your_webhook_secret
